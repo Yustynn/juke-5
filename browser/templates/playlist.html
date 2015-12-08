@@ -9,18 +9,7 @@
 				<th>Genres</th>
 			</tr>
 		</thead>
-		<tbody>
-			<tr ng-repeat="song in playlist.songs" ng-class="{active: isCurrent(song)}">
-				<td>
-					<button ng-hide="isCurrent(song)" ng-click="start(song)" class="btn btn-default btn-xs">
-						<span class="glyphicon glyphicon-play"></span>
-					</button>
-				</td>
-				<td>{{ song.name }}</td>
-				<td><span ng-repeat="artist in song.artists">{{ artist.name }} </span></td>
-				<td>{{ song.genres.join(', ') }}</td>
-			</tr>
-		</tbody>
+		<song-list songs = "playlist.songs"></song-list>
 	</table>
 	<small ng-hide="playlist.songs.length">No songs.</small>
 	<hr>
